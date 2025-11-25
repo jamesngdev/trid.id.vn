@@ -1,0 +1,7 @@
+---
+alwaysApply: true
+---
+
+- Always using yarn instead of npm, pnpm,...
+- Always run build after edit something and recheck output to known error, if it's have any error please fix it after give me result.
+- Always step by step give me a plan first then run, don't auto run.

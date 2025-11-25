@@ -1,0 +1,44 @@
+Create a complete, modern single-page blog theme that looks and feels exactly like Apple’s current 2025 website design language ("Liquid Glass" style), but with noticeably better UI/UX than Apple’s own site.
+
+Core visual requirements – must feel identical to apple.com (2025):
+- Frosted glass (blur + vibrancy) cards with very subtle inner glow
+- Extremely thin hairline borders (0.5px or less) with 10-15% opacity
+- Pure black (#000000) or pure white (#FFFFFF) background only
+- San Francisco Pro typeface (use system-font stack with SF Pro fallback)
+- Massive whitespace and heroic typography scale
+- Floating layered depth (multiple backdrop-filter blur layers)
+- Subtle parallax on scroll (elements move at different speeds)
+- Micro-animations: 150-250ms ease-outs, soft spring on hover (scale 1.02–1.05)
+- All interactive elements have liquid-like soft glow on hover/focus
+- Dark mode first, light mode as toggle (both must look native Apple)
+
+Layout must be 100% identical to Apple’s current homepage/blog structure:
+- Full-width hero with huge animated headline + subheadline
+- Sticky minimal top navigation bar (transparent → frosted on scroll)
+- Large featured post carousel (like Apple’s product carousel)
+- Grid of article cards (3–4 columns on desktop, edge-to-edge)
+- Article cards use heavy blur backdrop, floating above page
+- Sidebar on single post page (like Apple’s product pages)
+- Footer exactly like Apple’s (tiny text, bag icon, etc.)
+
+Now make the UI/UX BETTER than Apple’s actual site:
+- Faster perceived performance (lazy-load everything, skeleton screens)
+- Better accessibility (perfect contrast, focus states, reduced motion option)
+- Smarter hover/tap states (larger hit areas, predictive glow)
+- Reading progress indicator integrated into scrollbar (like Apple but thinner and frosted)
+- Instant dark/light mode toggle with no flash (use CSS variables + prefers-color-scheme)
+- Smooth scroll snap on mobile for sections
+- Article table of contents that floats and follows like Apple’s but with liquid blur pod
+- Related articles section with 3D tilt effect on hover
+- Built-in reading time, share sheet (iOS/macOS native style), and save-for-later button
+- All images use WebP + AVIF with LCP optimization
+
+Tech stack:
+- Next.js 
+- Tailwind CSS 
+- Framer Motion for animations
+- TypeScript
+- Fully responsive (mobile-first)
+- Include a beautiful syntax highlighter theme matching the glass style
+
+Make it look so close to Apple that people will think it’s an official Apple blog, but noticeably smoother and more delightful to use.

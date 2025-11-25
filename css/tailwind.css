@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apple-style base styles */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-white dark:bg-black text-black dark:text-white;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar - Apple style */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-700 rounded-full;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-gray-600;
+  }
+
+  /* Reading progress indicator */
+  ::-webkit-scrollbar-thumb:vertical {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Glass morphism utilities */
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-glass bg-white/10 dark:bg-black/10;
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 8px 32px 0 rgba(0, 0, 0, 0.1),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-strong {
+    @apply backdrop-blur-glass-strong bg-white/20 dark:bg-black/20;
+    border: 0.5px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+      0 8px 32px 0 rgba(0, 0, 0, 0.15),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+      inset 0 0 20px rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-hover {
+    @apply transition-all duration-200 ease-out;
+    @apply hover:scale-[1.02] hover:shadow-2xl;
+  }
+
+  .glass-hover:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .dark .glass-hover:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+
+  .hairline-border {
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .hairline-border {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .liquid-glow {
+    @apply transition-all duration-[250ms] ease-out;
+    @apply hover:shadow-[0_0_30px_rgba(255,255,255,0.2)];
+  }
+
+  .hero-typography {
+    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold;
+    @apply leading-[1.1] tracking-tight;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Code block glass morphism */
+@layer components {
+  .prose pre {
+    @apply glass rounded-lg;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .prose pre {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .prose code {
+    @apply glass px-1.5 py-0.5 rounded;
+    font-size: 0.9em;
+  }
+}
+
+.task-list-item::before {
+  @apply hidden;
+}
+
+.task-list-item {
+  @apply list-none;
+}
+
+.footnotes {
+  @apply pt-8 mt-12 border-t border-gray-200 dark:border-gray-700;
+}
+
+.csl-entry {
+  @apply my-5;
+}
+
+/* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
