@@ -23,8 +23,11 @@ const ThemeSwitch = () => {
         fill="currentColor"
         className="h-5 w-5 text-gray-900 dark:text-gray-100"
         style={{
-          transform: mounted && (theme === 'dark' || resolvedTheme === 'dark') ? 'rotate(0deg)' : 'rotate(180deg)',
-          transition: 'transform 0.3s'
+          transform:
+            mounted && (theme === 'dark' || resolvedTheme === 'dark')
+              ? 'rotate(0deg)'
+              : 'rotate(180deg)',
+          transition: 'transform 0.3s',
         }}
       >
         {mounted && (theme === 'dark' || resolvedTheme === 'dark') ? (

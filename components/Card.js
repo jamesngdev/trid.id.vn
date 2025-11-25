@@ -6,7 +6,7 @@ import Link from './Link'
 const Card = ({ title, description, imgSrc, href }) => (
   <div className="md p-4 md:w-1/2" style={{ maxWidth: '544px' }}>
     <div className={`${imgSrc && 'h-full'} glass glass-hover overflow-hidden rounded-2xl`}>
-        {imgSrc &&
+      {imgSrc &&
         (href ? (
           <Link href={href} aria-label={`Link to ${title}`}>
             <div className="overflow-hidden">
